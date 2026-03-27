@@ -42,10 +42,10 @@ export default function ContactForm() {
     });
   }; 
   return (
-    <div className="container container-sm">
+    <div className="container-md mb-2 d-flex flex-column flex-md-row">
       {completed ? <div>thansk</div> 
       :
-            <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} className="order-0 order-md-1 container-flex-child">
         {/* Username */}
         <Form.Group className="mb-3" controlId="formUsername">
           <Form.Label>Username</Form.Label>
@@ -53,6 +53,7 @@ export default function ContactForm() {
             type="text"
             placeholder="Enter username"
             name="username"
+            className="input-custom"
             value={formData.username}
             onChange={handleChange}
             required
@@ -66,6 +67,7 @@ export default function ContactForm() {
             type="email"
             placeholder="Enter email"
             name="email"
+            className="input-custom"
             value={formData.email}
             onChange={handleChange}
             required
@@ -79,9 +81,10 @@ export default function ContactForm() {
             name="reason"
             value={formData.reason}
             onChange={handleChange}
+            className="input-custom-select"
           >
             {razonesContacto.map((razon) => {
-              return (<option value={razon}>General Inquiry</option>)
+              return (<option key={razon} value={razon}>General Inquiry</option>)
             })}
           </Form.Select>
         </Form.Group>

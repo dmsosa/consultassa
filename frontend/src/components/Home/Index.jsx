@@ -1,20 +1,24 @@
-import ListGroup from 'react-bootstrap/ListGroup';
+import React from "react";
+import { coursesObjects } from "../../data/courses";
 
-function Index() {
+const Index = () => {
+
   return (
-    <div className="container-sm mb-2">
-        <ListGroup>
-        <ListGroup.Item>
-            <a className='link'></a>
-        </ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-        <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-        </ListGroup>
+    <div className="container-md mb-3">
+      <ul className="list-group">
+        {coursesObjects.map((course, index) => (
+          <li key={index} className="list-group-item">
+            <a
+              href={`/cursos/${encodeURIComponent(course.href)}`}
+              className="text-decoration-none"
+            >
+              {course.nombre}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
-    
   );
-}
+};
 
-export default DefaultExample;
+export default Index;
