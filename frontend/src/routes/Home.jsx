@@ -1,7 +1,7 @@
 import ContactForm from "../components/Form/ContactForm";
 import BannerContainer from "../components/BannerContainer";
 import Index from "../components/Home/Index";
-import RegisterForm from "../components/Form/RegisterForm";
+import RegisterForm from "../components/Form/RegisterForm/RegisterForm";
 // import PopularTags from "./../components/PopularTags";
 
 function Home() {

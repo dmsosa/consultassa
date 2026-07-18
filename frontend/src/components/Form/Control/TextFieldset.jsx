@@ -1,13 +1,14 @@
-export default function FormFieldset(props) {
-	const {
+import { forwardRef } from "react";
+
+const TextFieldset = forwardRef(({
 	autoFocus,
 	label = undefined,
 	normal,
 	placeholder,
 	type = "text",
-	registerFunc,
 	error,
-	} = props;
+	...register
+	}, ref) => {
 	return (
 		<fieldset className="form-group">
 			{label && <label>{label}</label>}
@@ -16,9 +17,12 @@ export default function FormFieldset(props) {
 				className={`form-control ${normal ? "" : "form-control-lg"}`}
 				placeholder={placeholder}
 				type={type}
-				{...registerFunc}
+				{...register}
+				ref={ref}
 			/>
 			{error && <div className="fieldset-error">{error.message}</div>}
 		</fieldset>
-	);
-}
+	)
+});
+
+export default TextFieldset;
