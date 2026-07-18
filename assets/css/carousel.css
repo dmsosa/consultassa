@@ -1,0 +1,22 @@
+.ds-carousel-wrap {
+	--carousel-item-min-w: 2.5rem;
+	--carousel-item-border-r: 5px;
+	--carousel-item-bg: lightslategray;
+	position: relative;
+}
+
+.ds-carousel {
+	position: relative;
+	display: flex;
+	min-height: fit-content;
+	overflow: scroll;
+
+}
+
+.ds-carousel-item {
+	position: absolute;
+	left: 0;
+	transition: all 0.4s ease;
+	border-radius: var(--carousel-item-border-r);
+	background-color: var(--carousel-item-bg);
+}
