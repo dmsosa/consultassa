@@ -1,3 +1,33 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  top: 0;
+  position: sticky;
+  z-index: 10000;
+  height: 3rem;
+  overflow: hidden;
+}
+
+button:focus {
+  outline: 0 !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+  user-select: none;
+}
+
+.not-found {
+  display: flex;
+  height: 85vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 /*
  * ============================================================================
  * Conduit Minimal CSS v4

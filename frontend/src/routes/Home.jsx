@@ -1,6 +1,7 @@
 import ContactForm from "../components/Form/ContactForm";
 import BannerContainer from "../components/BannerContainer";
 import Index from "../components/Home/Index";
+import RegisterForm from "../components/Form/RegisterForm";
 // import PopularTags from "./../components/PopularTags";
 
 function Home() {
@@ -12,6 +13,7 @@ function Home() {
           <p><span className="text-italic text-emphasis">El puente hacia tus sueños.</span></p>
           <p>Un lugar para mejorar tu negocio</p>
         </BannerContainer>
+		<RegisterForm></RegisterForm>
         <Index></Index>
         <ContactForm></ContactForm>
     </div>
