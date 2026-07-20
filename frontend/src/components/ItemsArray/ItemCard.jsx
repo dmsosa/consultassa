@@ -1,10 +1,11 @@
-function ItemCard({ id, title, img, price, onItemAdd, onItemRemove }) {
+function ItemCard({ id, title, description, img, price, onItemAdd, onItemRemove }) {
   return (
     <div className="item-card">
+      <img src={img} alt={`${title}'s image`} />
       <div className="item-card-header">
         <span>{title}</span>
+        <p>{description}</p>
       </div>
-      <img src={img} alt={`${title}'s image`} />
       <div className="item-card-footer">
         <span>{price}</span>
         <div className="d-flex justify-content-center gap-2 align-items-center">
