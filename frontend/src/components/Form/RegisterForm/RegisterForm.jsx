@@ -1,10 +1,8 @@
-import { Col, Row } from "react-bootstrap";
-import TextFieldset from "../Control/TextFieldset";
 import { FormProvider, useForm } from "react-hook-form";
 import SubmitBtn from "../Control/SubmitBtn";
-import Core from "./Core";
+import Core from "./RegFormCore";
 import FormLoader from "../FormLoader";
-import Items from "./Items";
+import Items from "./RegFormItems";
 
 const defValues = {
 	orderId: 0,

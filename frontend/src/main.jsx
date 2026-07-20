@@ -9,6 +9,7 @@ import NotFound from "./routes/NotFound";
 import Courses from "./routes/Courses";
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import "./assets/css/styles.css";
+import "./assets/css/cards.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Routes>
           <Route element={<App />}>
             <Route path="/" element={<Home />}></Route>
+            {/* <Route path="/cart" element={<ShoppingCart />}></Route> */}
             <Route path="/login" element={<Login />} />
             <Route path="/cursos/:name" element={<Courses />}></Route>
           </Route>

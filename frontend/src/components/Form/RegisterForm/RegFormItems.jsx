@@ -52,9 +52,10 @@ export default function Items() {
 		<tbody>
 			{fields.map((f, index) => {
 				return (
-					<tr>
+					<tr key={f.id}>
 						<td>
 							<CustomSelect
+							
 							opts={foodOptions} 
 							{...register(`foodItems.${index}.id`)}
 							>
