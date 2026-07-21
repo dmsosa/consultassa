@@ -6,7 +6,7 @@ function ItemsPagination({ totalCount, perPage, onPageChange }) {
 	<ReactPaginate
 	activeClassName="active"
 	breakLabel="..."
-	breakClassName="page-item"
+	breakClassName="page-item page-link"
 	nextClassName="page-item next"
 	previousClassName="page-item prev"
 	containerClassName="paginate"
@@ -18,7 +18,9 @@ function ItemsPagination({ totalCount, perPage, onPageChange }) {
 	pageClassName="page-item"
 	renderOnZeroPageCount={null}
 	onPageChange={onPageChange}
-	pageCount={Math.ceil(totalCount / perPage)}>
+	pageCount={Math.ceil(totalCount / perPage)}
+	pageRangeDisplayed={1}
+	>
 	</ReactPaginate>);
 };
 

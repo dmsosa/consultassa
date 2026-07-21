@@ -15,13 +15,16 @@ function useItemsArray(options = {}) {
   useEffect(() => {
 	setLoading(true);
 	itemsGetAll()
-	  .then(setItemsData)
+	  .then((data) => {
+		console.log(data);
+		setItemsData(data);
+	  })
 	  .catch(console.error)
 	  .finally(() => setLoading(false));
   }, []);
 
   const slicedItems = items.slice(offset, offset + itemsPerPage);
-  return { itemsArray: slicedItems, itemsCount, loading, setItemsData, setOffset };
+  return { itemsArray: slicedItems, itemsCount, itemsPerPage, loading, setItemsData, setOffset };
 }
 
 export default useItemsArray;

@@ -1,10 +1,15 @@
 
 import { Col, Container, Row } from "react-bootstrap";
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import ContactForm from "../Form/ContactForm/ContactForm";
 
 function Footer() {
   return (
-    <footer className="bg-dark text-light pt-4 pb-4 mt-5">
+	<>
+	<Container fluid>
+		<ContactForm></ContactForm>
+	</Container>
+	<footer className="bg-dark text-light pt-4 pb-4 mt-5">
       <Container className="flex-column flex-md-row">
         <Row>
           <Col md={4} className="mb-3">
@@ -45,6 +50,7 @@ function Footer() {
         </Row>
       </Container>
     </footer>
+	</>
   );
 }
 

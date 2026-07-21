@@ -1,8 +1,8 @@
 import { Col, Row } from "react-bootstrap";
 import TextFieldset from "../Control/TextFieldset";
-import { FormProvider, useFormContext } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 
-export default function Core() {
+export default function BuyFormCore() {
 
 	const { register } = useFormContext();
   return (

@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 const TextFieldset = forwardRef(({
 	autoFocus,
 	label = undefined,
-	normal,
+	normal = false,
 	placeholder,
 	type = "text",
 	error,

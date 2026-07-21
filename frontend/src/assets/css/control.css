@@ -1,0 +1,91 @@
+:root {
+	--app-control-padding: var(--app-control-padding-y) var(--app-control-padding-x);
+	--app-control-padding-x: .75rem;
+	--app-control-padding-y: .25rem;
+	--app-control-border: var(--bs-border-width) solid ;
+}
+
+select {
+	appearance: base-select;
+}
+
+select::picker(select) {
+	appearance: base-select;
+	transition: 
+      opacity .2s ease,
+      transform .2s var(--ease-out-3), 
+      display .2s allow-discrete, 
+      overlay .2s allow-discrete
+    ;
+}
+
+select::picker-icon {
+    display: none;
+}
+
+select:not(:open)::picker(select) {
+	opacity: 0;
+	transform: scale(.95);
+}
+
+select::open::picker(select) {
+	opacity: 1;
+	transform: scale(1);
+}
+
+select::-internal-select-inner-element {
+	background-color: blue;
+	color: blue;
+	width: 100px;
+	appearance: base-select;
+}
+
+select .picker {
+	width: 100px;
+}
+
+selectedcontent > * {
+	transition: 
+      transform 1s ease,
+      display 1s allow-discrete, 
+      opacity 1s;
+}
+option::-internal-option-label-container {
+	font-family: Arial, Helvetica, sans-serif;
+	color: red;
+}
+/* 
+.form-control-lg
+Specificity: (0,1,0)
+ {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.625rem;
+}
+
+<style>
+.form-control-lg {
+     min-height: calc(1.5em + 1rem + calc(var(--bs-border-width) * 2)); 
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    border-radius: var(--bs-border-radius-lg);
+}
+<style>
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+*/
