@@ -6,9 +6,8 @@ function Buy() {
   return (
 	<>
         <BannerContainer>
-          <h1 className="logo-font">Consultas S.A.</h1>
-          <p><span className="text-italic text-emphasis">El puente hacia tus sueños.</span></p>
-          <p>Un lugar para mejorar tu negocio</p>
+          <h2 className="logo-font">Finish your order</h2>
+          <p className="text-start d-block">And enjoy your time.</p>
         </BannerContainer>
 		<Container>
 			<BuyForm></BuyForm>

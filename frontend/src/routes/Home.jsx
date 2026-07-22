@@ -9,9 +9,9 @@ function Home() {
   return (
 	<>
         <BannerContainer>
-          <h1 className="logo-font">Consultas S.A.</h1>
-          <p><span className="text-italic text-emphasis">El puente hacia tus sueños.</span></p>
-          <p>Un lugar para mejorar tu negocio</p>
+          <h1 className="logo-font">Gamemaster S.E.</h1>
+          <p><span className="fst-italic text-emphasis fw-normal">"No matter what, you have to find something to fight for."</span></p>
+          <p className="fst-italic">Joel - The Last of Us</p>
         </BannerContainer>
 		<Container>
         	<Index></Index>

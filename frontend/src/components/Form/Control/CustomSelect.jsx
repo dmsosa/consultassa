@@ -27,7 +27,7 @@ const CustomSelect = forwardRef(({
 					key={op.value}
 					value={op.value}
 					>
-						<div class="custom-option">
+						<div className="custom-option">
 							<span className="icon"></span>
 							<span>{op.text}</span>
 							<span className="description">{op.desc}</span>

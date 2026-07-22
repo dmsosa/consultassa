@@ -10,14 +10,16 @@ export default function BuyFormCore() {
 	<Row>
 		<Col>
 			<TextFieldset
+				label="Your username"
 				{...register("username")}
-				placeholder="Your Name"
+				placeholder="username"
 			></TextFieldset>
 		</Col>
 		<Col>
 		<TextFieldset
+			label="Your email"
 		type="email"
-		placeholder="Your email"
+		placeholder="email"
 		{...register("email")}
 		></TextFieldset>
 		</Col>
@@ -33,33 +35,12 @@ export default function BuyFormCore() {
 		</Col>
 		<Col>
 		<TextFieldset
+		label="Your country"
 		{...register("country")}
-		placeholder="countryy"
+		placeholder="..."
 		></TextFieldset>
 		</Col>
 	</Row>
-	<Row>
-		<Col>
-			<TextFieldset
-				{...register("username")}
-				placeholder="Your Name"
-			></TextFieldset>
-		</Col>
-		<Col>
-		<TextFieldset
-		></TextFieldset>
-		</Col>
-	</Row>
-	<Row>
-		<Col>
-			<TextFieldset
-			></TextFieldset>
-		</Col>
-		<Col>
-		<TextFieldset
-		></TextFieldset>
-		</Col>
-	</Row>	
 	</>
   );
 }

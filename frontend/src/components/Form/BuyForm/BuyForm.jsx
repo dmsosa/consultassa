@@ -1,8 +1,9 @@
 import { useFormContext } from "react-hook-form";
 import SubmitBtn from "../Control/SubmitBtn";
 import BuyFormCore from "./BuyFormCore";
-import FormLoader from "../FormLoader";
 import BuyFormItems from "./BuyFormItems";
+import SpinnerLoader from "../SpinnerLoader";
+import ThankYou from "../ThankYou";
 
 
 
@@ -32,13 +33,20 @@ export default function BuyForm() {
 
   return (
 		<form onSubmit={handleSubmit(onSubmit)} className="container mb-5">
-			<FormLoader control={control}></FormLoader>
+			{formState.isLoading && <SpinnerLoader></SpinnerLoader>}
+			{formState.isSubmitted && formState.isSubmitSuccessful ?
+			
+			<ThankYou></ThankYou>
+			:
+			<>
 			<BuyFormCore></BuyFormCore>
 			<BuyFormItems></BuyFormItems>
 			<div className="d-flex justify-content-end align-items-center gap-2">
 				<SubmitBtn control={control} text={"Confirm"}></SubmitBtn>
 				<button className="btn btn-danger ms-2">Cancel</button>
 			</div>
+			</>
+			}
 		</form>
   );
 }

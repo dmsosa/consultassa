@@ -1,19 +1,30 @@
 import React from "react";
-import { coursesObjects } from "../../data/courses";
+import { Link } from "react-router-dom";
+
+const pages = [
+	{
+		name: "Home", url: "/",
+	}, 
+	{
+		name: "Buy", url: "/buy",
+	},
+	{
+		name: "Items", url: "/items/1",
+	},
+]
 
 const Index = () => {
 
   return (
     <div className="container-md mb-3">
       <ul className="list-group">
-        {coursesObjects.map((course, index) => (
+        {pages.map((page, index) => (
           <li key={index} className="list-group-item">
-            <a
-              href={`/cursos/${encodeURIComponent(course.href)}`}
-              className="text-decoration-none"
+            <Link to={page.url}
+              className="link text-decoration-none"
             >
-              {course.nombre}
-            </a>
+              {page.name}
+            </Link>
           </li>
         ))}
       </ul>
