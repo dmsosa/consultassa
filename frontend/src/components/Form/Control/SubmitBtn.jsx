@@ -1,4 +1,5 @@
 import { useFormState } from "react-hook-form";
+import { FaCheck, FaSpinner } from "react-icons/fa";
 
 export default function SubmitBtn(props) {
 	const { clazz = "btn-primary", text = "confirm", control } = props;
@@ -11,16 +12,20 @@ export default function SubmitBtn(props) {
 		{
 		isSubmitting 
 		&& 
-		<>
+		<div>
+			<FaSpinner></FaSpinner>
 			<span
               className="spinner-border spinner-border-sm"
               aria-hidden="true"></span>
 			<span>wait...</span>
-		</>
+		</div>
 		}
-		<span role="status" className="ms-1">
-			{text}
-		</span>
+		<div>
+			<FaCheck></FaCheck>
+			<span role="status" className="ms-2">
+				{text}
+			</span>
+		</div>
 	</button>
   );
 }

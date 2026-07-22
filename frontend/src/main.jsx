@@ -10,22 +10,19 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import "./assets/css/styles.css";
 import "./assets/css/cards.css";
 import "./assets/css/control.css";
-import BuyForm from "./components/Form/BuyForm/BuyForm";
-import { BuyFormProvider } from "./context/buyContext";
+import Buy from "./routes/Buy";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-	<BuyFormProvider>
 		<Routes>
           <Route element={<App />}>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/buy" element={<BuyForm />}></Route>
+            <Route path="/buy" element={<Buy />}></Route>
             <Route path="/login" element={<Login />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
-	</BuyFormProvider>
     </BrowserRouter>
   </React.StrictMode>,
   );		

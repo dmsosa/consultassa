@@ -35,8 +35,10 @@ export default function BuyForm() {
 			<FormLoader control={control}></FormLoader>
 			<BuyFormCore></BuyFormCore>
 			<BuyFormItems></BuyFormItems>
-			<SubmitBtn control={control} text={"send"}></SubmitBtn>
-			<button className="btn btn-danger ms-2"></button>
+			<div className="d-flex justify-content-end align-items-center gap-2">
+				<SubmitBtn control={control} text={"Confirm"}></SubmitBtn>
+				<button className="btn btn-danger ms-2">Cancel</button>
+			</div>
 		</form>
   );
 }

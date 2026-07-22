@@ -25,16 +25,17 @@ export default function BuyFormItems() {
     
   }, [])
 
-	const { register, getValues, setValue, trigger } = useFormContext();
+	const { register, getValues, setValue, trigger, formState } = useFormContext();
 	const { fields, append, remove } = useFieldArray({ name: "items"});
   	
 	const onRowAdd = (e) => {
 		e.preventDefault();
-		append({ id: 0, title: "", price: 0, quantity: 0, totalPrice: 0 });
+		console.log(fields);
+	append({ id: 0, title: "", price: 0, quantity: 1, totalPrice: 0 });
  	}
 
-	const onRowDelete = (e) => {
-		console.log("Fired event, e", e);
+	const onRowDelete = (e, itemId) => {
+		console.log("Fired event, e", fields);
 		alert("item removed from the cart")
 		const existingIndex = fields.findIndex((f) => f.id === itemId);
 		if (existingIndex >= 0) remove(existingIndex);
@@ -72,7 +73,7 @@ export default function BuyFormItems() {
 							</CustomSelect>
 						</td>
 						<td>
-							<span>{getValues(`items.${index}.title`)}</span>
+							<span>{getValues(`username`)}</span>
 						</td>
 						<td>
 							<span>{"$" + getValues(`items.${index}.price`)}</span>
@@ -84,7 +85,7 @@ export default function BuyFormItems() {
 							<span>{"$" + getValues(`items.${index}.totalPrice`)}</span>
 						</td>
 						<td>
-							<button type="button" className="btn btn-danger" onClick={onRowDelete}>X</button>
+							<button type="button" className="btn btn-danger" onClick={() => onRowDelete(e, f.id)}>X</button>
 						</td>
 					</tr>
 				)

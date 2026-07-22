@@ -10,8 +10,8 @@ const TextFieldset = forwardRef(({
 	...register
 	}, ref) => {
 	return (
-		<fieldset className="form-group">
-			{label && <label>{label}</label>}
+		<fieldset className="form-group mb-2">
+			{label && <label className="form-label">{label}</label>}
 			<input
 				autoFocus={autoFocus}
 				className={`form-control ${normal ? "" : "form-control-lg"}`}

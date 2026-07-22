@@ -4,6 +4,7 @@ const CustomSelect = forwardRef(({
 	label = undefined,
 	id = undefined,
 	clazz = "custom-select",
+	normal = false,
 	error,
 	opts,
 	...register
@@ -11,13 +12,15 @@ const CustomSelect = forwardRef(({
 	return (
 		<fieldset className="form-group">
 			{label && <label>{label}</label>}
-			<select id={id} className={`${clazz}`} {...register} ref={ref}>
-				<div className="selected-content-wrapper">
-					<selectedcontent></selectedcontent>
-					<svg className="picker" width="24" height="24" viewBox="0 0 24 24">
-						<path fill="red" d="m7 10l5 5l5-5z"/>
-					</svg>
-				</div>
+			<select id={id} className={`${clazz} form-control ${normal ? "" : "form-control-lg"}`} {...register} ref={ref}>
+				<button>
+					<div>
+						<selectedcontent></selectedcontent>
+						<svg className="picker" width="24" height="24" viewBox="0 0 24 24">
+							<path fill="currentColor" d="m7 10l5 5l5-5z"/>
+						</svg>
+					</div>
+				</button>
 				{ opts.map((op) => (
 					<option
 					disabled={op.disabled} 
@@ -27,7 +30,7 @@ const CustomSelect = forwardRef(({
 						<div class="custom-option">
 							<span className="icon"></span>
 							<span>{op.text}</span>
-							<span class="description">{op.desc}</span>
+							<span className="description">{op.desc}</span>
 						</div>
 					</option>
 				)) }

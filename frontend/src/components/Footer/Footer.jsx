@@ -1,39 +1,44 @@
 
 import { Col, Container, Row } from "react-bootstrap";
-import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
-import ContactForm from "../Form/ContactForm/ContactForm";
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
+import BrandLogo from "../Header/BrandLogo";
 
 function Footer() {
   return (
-	<>
-	<Container fluid>
-		<ContactForm></ContactForm>
-	</Container>
-	<footer className="bg-dark text-light pt-4 pb-4 mt-5">
-      <Container className="flex-column flex-md-row">
+	<footer className="container-fluid bg-body-tertiary pt-5 px-3 mt-5">
+      <Container className="border-top py-3">
         <Row>
-          <Col md={4} className="mb-3">
-            <h5>Consultas S.A.</h5>
-            <p>
-              Brindar servicios de consultoría profesional para ayudar a que su negocio crezca y tenga éxito.
+          <Col md={2} className="col-6 mb-3">
+			<BrandLogo></BrandLogo>
+            <p className="font-italic">
+              Let our customers have more fun with the .
             </p>
           </Col>
 
-          <Col md={4} className="mb-3">
-            <h5>Servicios</h5>
-            <ul className="list-unstyled">
-              <li><a href="/" className="text-light text-decoration-none">Inicio</a></li>
-              <li><a href="/services" className="text-light text-decoration-none">Atención al cliente</a></li>
-              <li><a href="/about" className="text-light text-decoration-none">Sobre nosotros</a></li>
-              <li><a href="/contact" className="text-light text-decoration-none">Empleos</a></li>
+          <Col md={2} className="col-6 mb-3">
+            <h5>Services</h5>
+            <ul className="nav flex-colum">
+              <li className="nav-item mb-2"><a href="/" className="nav-link text-body-secondary">Careers</a></li>
+              <li className="nav-item mb-2"><a href="/services" className="nav-link text-body-secondary">Study with us</a></li>
+              <li className="nav-item mb-2"><a href="/about" className="nav-link text-body-secondary">Our partners</a></li>
             </ul>
           </Col>
 
-          <Col md={4} className="mb-3">
+          <Col md={2} className="col-6 mb-3">
+            <h5>Sections</h5>
+            <ul className="nav flex-colum">
+				<li className="nav-item mb-2"><a href="#" className="nav-link p-2 text-body-secondary">Home</a></li>
+				<li className="nav-item mb-2"><a href="#" className="nav-link p-2 text-body-secondary">Features</a></li>
+				<li className="nav-item mb-2"><a href="#" className="nav-link p-2 text-body-secondary">Pricing</a></li>
+				<li className="nav-item mb-2"><a href="#" className="nav-link p-2 text-body-secondary">FAQs</a></li>
+				<li className="nav-item mb-2"><a href="#" className="nav-link p-2 text-body-secondary">About</a></li>
+			</ul>
+          </Col>
+			<Col md={5} className="offset-md-1 mb-3">
             <h5>Contacto</h5>
             <p>Email: info@consultassa.com</p>
             <p>Phone: +34 600 123 456</p>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-start">
               <a href="#" className="text-light me-3"><FaFacebook /></a>
               <a href="#" className="text-light me-3"><FaTwitter /></a>
               <a href="#" className="text-light"><FaLinkedin /></a>
@@ -41,16 +46,25 @@ function Footer() {
           </Col>
         </Row>
 
-        <Row className="mt-3">
-          <Col className="text-center">
-            <small>
+        <div className="d-flex flex-column flex-sm-row justify-content-center gap-3 pt-4 mt-4 border-top">
+            <p className="text-center text-primary-emphasis fw-light fs-6">
               © {new Date().getFullYear()} Consultas S.A. All rights reserved.
-            </small>
-          </Col>
-        </Row>
+            </p>
+			<ul className="list-unstyled d-flex align-items-center">
+				<li className="ms-3">
+					<a href="#" aria-label="Instagran" className="link text-primary-emphasis fs-6">
+						<FaInstagram></FaInstagram>
+					</a>
+				</li>
+				<li className="ms-3">
+					<a href="#" aria-label="Facebook" className="link text-primary-emphasis fs-6">
+						<FaFacebook></FaFacebook>
+					</a>
+				</li>
+			</ul>
+        </div>
       </Container>
     </footer>
-	</>
   );
 }
 

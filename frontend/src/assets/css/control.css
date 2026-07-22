@@ -6,14 +6,19 @@
 }
 
 select {
-	appearance: base-select;
+	appearance: base-select !important;
+}
+
+select:has(selectedcontent) {
+	min-inline-size: 30ch;
+	cursor: pointer;
 }
 
 select::picker(select) {
 	appearance: base-select;
 	transition: 
       opacity .2s ease,
-      transform .2s var(--ease-out-3), 
+      transform .2s ease, 
       display .2s allow-discrete, 
       overlay .2s allow-discrete
     ;
@@ -28,64 +33,125 @@ select:not(:open)::picker(select) {
 	transform: scale(.95);
 }
 
-select::open::picker(select) {
+select:open::picker(select) {
 	opacity: 1;
 	transform: scale(1);
 }
 
-select::-internal-select-inner-element {
-	background-color: blue;
-	color: blue;
-	width: 100px;
-	appearance: base-select;
-}
-
-select .picker {
-	width: 100px;
-}
-
-selectedcontent > * {
+select selectedcontent > * {
 	transition: 
-      transform 1s ease,
-      display 1s allow-discrete, 
-      opacity 1s;
-}
-option::-internal-option-label-container {
-	font-family: Arial, Helvetica, sans-serif;
-	color: red;
-}
-/* 
-.form-control-lg
-Specificity: (0,1,0)
- {
-    padding: 0.75rem 1.5rem;
-    font-size: 1.25rem;
-    border-radius: 0.625rem;
+	transform 0.2s ease,
+	display 0.2s allow-discrete,
+	opacity 0.2s;
+
+	@starting-style {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+	opacity: 1;
 }
 
-<style>
-.form-control-lg {
-     min-height: calc(1.5em + 1rem + calc(var(--bs-border-width) * 2)); 
-    padding: .5rem 1rem;
-    font-size: 1.25rem;
-    border-radius: var(--bs-border-radius-lg);
+select button {
+	min-inline-size: 30ch;
 }
-<style>
-.form-control {
-    display: block;
-    width: 100%;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--bs-body-color);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: var(--bs-body-bg);
-    background-clip: padding-box;
-    border: var(--bs-border-width) solid var(--bs-border-color);
-    border-radius: var(--bs-border-radius);
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+select:focus-visible button {
+	outline: red solid 1rem;
 }
-*/
+
+select button div {
+	inline-size: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.3rem;
+}
+
+select button > div svg {
+	inline-size: 5ch;
+	transition: transform 0.2s ease;
+}
+
+select:open > button svg {
+	transform: rotate(90deg);
+}
+
+select:open > button svg:is(:focus, :focus-visible) {
+	outline: none;
+}
+
+
+select::picker(select) {
+	background: var(--bs-secondary-bg);
+	border-radius: var(--bs-border-radius);
+	padding: 0;
+	margin-block: 0.25rem;
+	box-shadow: var(--app-box-shadow);
+	scrollbar-width: thin;
+	scroll-behavior: smooth;
+	min-inline-size: 30ch;
+	outline: none;
+	border: none;
+}
+
+select::picker(select) hr {
+	margin-block: 0.25rem;
+}
+
+
+select option {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	padding: 0.375rem 0.7rem;
+	cursor: pointer;
+	outline-offset: -0.25rem;
+} 
+
+select option::checkmark {
+	font-weight: bold;
+}
+
+select:focus-visible option {
+	outline-offset: -0.25rem;
+	background-color: red;
+}
+
+select option:is(:focus, :hover) {
+	color: inherit;
+	background-color: oklch(from var(--bs-primary) l c h / 15%);
+}
+
+select option:is(:checked) {
+	color: inherit;
+	background-color: oklch(from var(--bs-primary) l c h / 35%);
+	font-weight: bold;
+}
+
+.custom-option {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.015rem;
+  align-items: center;
+  justify-content: start;
+}
+
+.custom-option .description {
+  color: var(--bs-secondary);
+  flex-basis: 100%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  order: 3;
+}
+
+selectedcontent .custom-option .description {
+  display: none;
+}
+
+/* ============================================================================
+ * FORMS
+ * ============================================================================ */
+
+td {
+	padding: 0.3rem;
+}
