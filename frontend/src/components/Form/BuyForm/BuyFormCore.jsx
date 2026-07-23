@@ -1,10 +1,10 @@
 import { Col, Row } from "react-bootstrap";
 import TextFieldset from "../Control/TextFieldset";
-import { useFormContext } from "react-hook-form";
+import { get, useFormContext } from "react-hook-form";
 
 export default function BuyFormCore() {
 
-	const { register } = useFormContext();
+	const { getValues, register } = useFormContext();
   return (
 	<>
 	<Row>

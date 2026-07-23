@@ -40,3 +40,15 @@ Need to implement:
 
 Grid with product cards and how to download them.
 How to change between pages? easy, react pages.
+
+
+# My page Caracteristics
+
+I need to do a form, which controls the following information:
+
+username
+email
+address
+mobile
+country
+orderedItems

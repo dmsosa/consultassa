@@ -3,6 +3,7 @@ import CustomSelect from "../Control/CustomSelect";
 import { useEffect, useState } from "react";
 import { itemsGetAll } from "../../../data/items";
 
+const emptyOption = { id: 0, title: "", price: 0, quantity: 1, totalPrice: 0 };
 export default function BuyFormItems() {
   const [itemsList, setItems] = useState([])
   const [opts, setOpts] = useState([])
@@ -51,17 +52,17 @@ export default function BuyFormItems() {
     e,
     rowIndex
   ) => {
-    const id = parseInt(e.target.value)
+    const id = parseInt(e.target.value);
     let existingItem;
     if (id == 0) existingItem = emptyItem;
     else existingItem = itemsList.find((x) => x.id == id)
 	const price = existingItem.price;
 	const title = existingItem.title;
 	const quantity = existingItem.quantity;
-    setValue(`items.${0}.price`, 90)
-    setValue(`items.${rowIndex}.title`, title)
-    setValue(`items.${rowIndex}.quantity`, quantity)
-    updateRowTotalPrice(rowIndex)
+    setValue(`items.${0}.price`, price);
+    setValue(`items.${rowIndex}.title`, title);
+    setValue(`items.${rowIndex}.quantity`, quantity);
+    updateRowTotalPrice(rowIndex);
   }
 
 	const updateRowTotalPrice = (index) => {
@@ -111,7 +112,6 @@ export default function BuyFormItems() {
 					<tr key={f.id}>
 						<td>
 							<CustomSelect
-							
 							opts={opts} 
 							{...register(`items.${index}.id`, {
 								valueAsNumber: true,
@@ -121,7 +121,6 @@ export default function BuyFormItems() {
 								},
 								onChange: (e) => {
 									onItemIdChange(e, index);
-									trigger(`items.${index}.quantity`)
 								}
 							})}
 							>

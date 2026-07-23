@@ -4,7 +4,7 @@ const defValues = {
 	orderId: 0,
 	orderNo: new Date().valueOf(),
 	placedOn: new Date(),
-	username: "",
+	username: "patata",
 	email: "",
 	country: "Spain",
 	mobile: "",
@@ -14,7 +14,7 @@ const defValues = {
 	birthday: new Date(),
 	paymentMethod: "",
 	deliveryIn: 0,
-	items: [{ id: 0, title: "", price: 0, quantity: 0, totalPrice: 0 }],
+	items: [{ id: 0, title: "", price: 0, quantity: 1, totalPrice: 0 }],
 	gTotal: 0,
 	address: {
 		streetAddress: "",
