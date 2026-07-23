@@ -15,7 +15,7 @@ const BuyPreview = () => {
 			<h4 className="d-inline fw-bold">{`Total items in cart: ${fields.length}`}</h4>
 		</div>
 		<div className="d-flex align-items-center justify-content-center gap-2">
-			<span className="fw-bold">{"$" + getValues(`gTotal`)}</span>
+			<span className="fw-bold">{"$" + getValues("gTotal")}</span>
 			<Link to={"/buy"} type="button" className="btn btn-primary">Buy order</Link>
 		</div>
 	</div>

@@ -13,10 +13,12 @@ const CustomSelect = forwardRef(({
 
 		const { getValues } = useFormContext();
 		const value = getValues(register.name);
+		console.log(register.name);
+		console.log(value);
 	return (
 		<fieldset className="form-group">
 			{label && <label>{label}</label>}
-			<select id={id} value={value === 0 ? 'Select item' : value }  className={`${clazz} form-control ${normal ? "" : "form-control-lg"}`} {...register} ref={ref}>
+			<select id={id} value={value }  className={`${clazz} form-control ${normal ? "" : "form-control-lg"}`} {...register} ref={ref}>
 				<button>
 					<div>
 						<selectedcontent></selectedcontent>

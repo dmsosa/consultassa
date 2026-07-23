@@ -5,6 +5,7 @@ const TextFieldset = forwardRef(({
 	label = undefined,
 	normal = false,
 	placeholder,
+	clazz,
 	type = "text",
 	error,
 	...register
@@ -14,7 +15,7 @@ const TextFieldset = forwardRef(({
 			{label && <label className="form-label">{label}</label>}
 			<input
 				autoFocus={autoFocus}
-				className={`form-control ${normal ? "" : "form-control-lg"}`}
+				className={`form-control ${clazz} ${normal ? "" : "form-control-lg"}`}
 				placeholder={placeholder}
 				type={type}
 				{...register}
