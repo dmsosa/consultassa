@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 function ItemCard({ item, onItemAdd, onItemRemove }) {
-	const { id, slug, title, description, price } = item;
+	const { id, img, slug, title, description, price } = item;
 	return (
 		<div className="item-card">
 			<div className="item-card-body">
-				<img src={`../../../public/items/id${id}.webp`} alt={`${title}'s image`} />
+				<img src={img} alt={`${title}'s image`} />
 			</div>
 			<div className="item-card-header">
 				<Link to={`/items/${slug}`} className="link">
